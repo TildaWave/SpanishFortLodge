@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/412893f3-5db3-436a-9180-3030b2d087c6/microsoft.web/sites/subscriptions/412893f3-5db3-436a-9180-3030b2d087c6/resourceGroups/Default-ApplicationInsights-EastUS/providers/Microsoft.Web/sites/spanishfortlodge",
+    "appService.deploySubpath": "src"
+}
