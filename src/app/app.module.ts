@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { ApplicationInsightsErrorHandler } from './applicationinsights-error-handler/applicationinsights-error-handler.component';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +25,10 @@ import { NewsComponent } from './news/news.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {provide: ErrorHandler,
+    useClass: ApplicationInsightsErrorHandler},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
