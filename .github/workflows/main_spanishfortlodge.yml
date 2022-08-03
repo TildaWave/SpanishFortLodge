@@ -57,6 +57,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'spanishfortlodge'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B7A3399441D24B02B011AA6110D06329 }}
-          package: .
+          package: ./dist/spanish-fort-lodge
