@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'events', component: EventsComponent
   },
   {
-    path: 'news', component: NewsComponent
+    path: 'newsfeed', component: NewsComponent
   },
   {
     path: '**', component: HomeComponent
