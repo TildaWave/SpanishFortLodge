@@ -89,17 +89,6 @@ html, body {
 
 
 
-#about-masonry h2 {
-    font-weight: 300;
-    font-family: 'ProximaNova-Semibold', sans-serif;
-    font-size: 30px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    padding-top: 80px;
-    padding-bottom: 50px;
-    color: #7c1418;
-}
-
 #about-masonry h4 {
     font-weight: 300;
     font-family: 'ProximaNova-Thin', sans-serif;
@@ -340,4 +329,33 @@ form {
         left: -55px;
     }
 }
+/********************************************************* New CSS ****************************************/
 
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}

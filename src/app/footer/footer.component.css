@@ -1,12 +1,8 @@
-.spacer {
- flex: 1 1 auto;
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
-button.mat-raised-button {
- border-radius: 0;
-}
-.searchbar {
- width: 99%;
- margin: 5px;
- height: 30px;
- border-radius: 23px;
+
+footer p {
+  margin-bottom: .25rem;
 }

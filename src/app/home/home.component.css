@@ -1,0 +1,17 @@
+#about-masonry {
+  background-image: url("../../assets/masonry-back.jpg");
+  background-size: 100% 100%;
+}
+
+
+
+#about-masonry h2 {
+    font-weight: 300;
+    font-family: 'ProximaNova-Semibold', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    color: #7c1418;
+}
