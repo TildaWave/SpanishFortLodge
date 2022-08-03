@@ -3,10 +3,6 @@ html, body {
     padding: 0;
 }
 
-#header {
-    height: 90px;
-    position: relative;
-}
 
 .main-nav {
     position: absolute;
@@ -76,14 +72,6 @@ html, body {
     text-align: center;
     color: #fff;
 }
-
-.wide {
-    max-width: 1260px;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-
 
 #about-top {
     height: 455px
@@ -280,28 +268,11 @@ html, body {
 }
 
 .footer-first-line img {
-    vertical-align: middle;
     margin-left: 25px;
     margin-right: 25px;
     display: block;
     width: 41px;
     height: 43px;
-}
-
-.footer-second-line {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: left;
-    font-family: 'ProximaNova-Semibold', sans-serif;
-}
-
-.footer-second-line ul {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    line-height: 20px;
-    padding-top: 10px;
-    float: left;
 }
 
 .footer-second-line li {
