@@ -3,15 +3,6 @@ html, body {
     padding: 0;
 }
 
-.mainblock-inner {
-    max-width: 875px;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: #fff;
-}
 
 #about-top h2 {
     font-weight: 300;
@@ -47,31 +38,7 @@ html, body {
     color: #fff;
 }
 
-#about-mission h4 {
-    font-weight: 300;
-    font-family: 'ProximaNova-Thin', sans-serif;
-    font-size: 18px;
-    color: #fff;
-    padding-bottom: 85px;
-    text-align: justify;
-    -moz-text-align-last: center;
-    text-align-last: center;
-}
 
-#about-rewards {
-    padding-bottom: 85px;
-}
-
-#about-rewards h2 {
-    font-weight: 300;
-    font-family: 'ProximaNova-Semibold', sans-serif;
-    font-size: 30px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    padding-top: 80px;
-    padding-bottom: 50px;
-    color: #534444;
-}
 
 .footer-first-line {
     justify-content: center;
