@@ -3,66 +3,6 @@ html, body {
     padding: 0;
 }
 
-
-.main-nav {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.menu {
-    padding: 0;
-    margin: 0;
-}
-
-.menu li {
-    display: inline;
-    margin: 0;
-    padding: 0;
-}
-
-.menu li a {
-    display: inline-block;
-    padding-right: 20px;
-    padding-left: 20px;
-    color: #344042;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-family: 'ProximaNova-Semibold', sans-serif;
-    line-height: 90px;
-}
-
-.menu li a:hover {
-    background: #fafafa;
-}
-
-.menu li:last-child a {
-    margin-left: 20px;
-    background: #b71234;
-    color: #fff;
-}
-
-.menu li:last-child a:hover {
-    background: #c01b3d;
-}
-
-.mlogo, .mclose {
-    display: none;
-}
-
-.mainblock {
-    background-size: cover;
-    background-position: top center;
-    position: relative;
-}
-
-.black {
-    background-color: rgba(0, 0, 0, 0.8)
-}
-
-
-
 .mainblock-inner {
     max-width: 875px;
     padding-left: 30px;
@@ -71,10 +11,6 @@ html, body {
     margin-right: auto;
     text-align: center;
     color: #fff;
-}
-
-#about-top {
-    height: 455px
 }
 
 #about-top h2 {
@@ -135,96 +71,6 @@ html, body {
     padding-top: 80px;
     padding-bottom: 50px;
     color: #534444;
-}
-
-.rewards-container {
-    display: flex;
-    margin-top: 20px;
-}
-
-.rewards-container .rewards-item {
-    padding-left: 55px;
-    padding-right: 55px;
-    background-image: url('assets/block-separator.png');
-    background-repeat: no-repeat;
-    background-position: right 0px top 0px;
-}
-
-.rewards-container .rewards-item:last-child {
-    background: none;
-}
-
-.rewards-container .rewards-item h3 {
-    font-weight: 300;
-    font-family: 'ProximaNova-Bold', sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #7c1418;
-}
-
-.rewards-container .rewards-item h4 {
-    font-weight: 300;
-    font-family: 'ProximaNova-Thin', sans-serif;
-    font-size: 18px;
-    color: #000;
-    text-align: justify;
-    -moz-text-align-last: center;
-    text-align-last: center;
-}
-
-#join-us-block h2 {
-    font-weight: 300;
-    font-family: 'ProximaNova-Semibold', sans-serif;
-    font-size: 30px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    padding-top: 80px;
-    padding-bottom: 50px;
-    color: #fff;
-}
-
-#join-us-block h4 {
-    font-weight: 300;
-    font-family: 'ProximaNova-Thin', sans-serif;
-    font-size: 18px;
-    color: #fff;
-    padding-bottom: 60px;
-    text-align: justify;
-    -moz-text-align-last: center;
-    text-align-last: center;
-}
-
-#join-us-block .button {
-    display: inline-block;
-    font-family: 'ProximaNova-Bold', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    text-decoration: none;
-    width: 200px;
-    height: 65px;
-    margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 65px;
-    font-size: 16px;
-    background: #fff;
-    color: #000;
-}
-
-#join-us-block .button:hover {
-    background: #eee;
-}
-
-#upcoming-events-block h4 {
-    font-weight: 300;
-    font-family: 'ProximaNova-Thin', sans-serif;
-    font-size: 18px;
-    color: #fff;
-    padding-bottom: 60px;
-    text-align: justify;
-    -moz-text-align-last: center;
-    text-align-last: center;
 }
 
 .footer-first-line {
@@ -290,62 +136,4 @@ html, body {
 
 .footer-second-line .icons img {
     height: 40px
-}
-
-.cb {
-    clear: both;
-}
-
-form {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-
-
-@media screen  and (max-width: 700px) {
-    #news-archive .post .article-illustration {
-        float: none;
-        width: 100%;
-        margin-right: 50px;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .slick-next {
-        right: -55px;
-    }
-    .slick-prev {
-        left: -55px;
-    }
-}
-/********************************************************* New CSS ****************************************/
-:root {
-  --jumbotron-padding-y: 3rem;
-}
-
-.jumbotron {
-  padding-top: var(--jumbotron-padding-y);
-  padding-bottom: var(--jumbotron-padding-y);
-  margin-bottom: 0;
-  background-color: #fff;
-}
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: calc(var(--jumbotron-padding-y) * 2);
-    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
-  }
-}
-
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
-.jumbotron-heading {
-  font-weight: 300;
-}
-
-.jumbotron .container {
-  max-width: 40rem;
 }

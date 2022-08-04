@@ -3,7 +3,9 @@
   background-size: 100% 100%;
 }
 
-
+#mission {
+  color: white;
+}
 
 #about-masonry h2 {
     font-weight: 300;
@@ -14,4 +16,9 @@
     padding-top: 80px;
     padding-bottom: 50px;
     color: #7c1418;
+}
+
+#rewards {
+  background-image: url("../../assets/rewards-background.jpg");
+  background-size: 100% 100%;
 }
