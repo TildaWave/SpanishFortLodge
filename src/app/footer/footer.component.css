@@ -6,3 +6,10 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+.navFooter {
+    background: #D7AF00;
+    color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+}

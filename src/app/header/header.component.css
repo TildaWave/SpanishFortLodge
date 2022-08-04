@@ -2,3 +2,15 @@
   background-image: url("../../assets/lodgefront.jpg");
   background-size: 100% 100%;
 }
+
+.navHeader {
+    background: #D7AF00;
+    color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#headerlogo {
+  height: 115px;
+  width: 115px;
+}
