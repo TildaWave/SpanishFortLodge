@@ -1,6 +1,7 @@
 #about-masonry {
   background-image: url("../../assets/masonry-back.jpg");
   background-size: 100% 100%;
+  height: 350px;
 }
 
 #mission {
