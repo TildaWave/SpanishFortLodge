@@ -5,7 +5,6 @@
 
 .navHeader {
     background: #d4af37;
-    color: #fff;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -25,3 +24,7 @@
     color: #fff;
 }
 
+#navbarNavAltMarkup a {
+  color: #ffff;
+  font-style: bold;
+}
