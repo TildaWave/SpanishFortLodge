@@ -1,4 +1,5 @@
 import { ApplicationInsightsErrorHandler } from './applicationinsights-error-handler/applicationinsights-error-handler.component';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -28,6 +29,7 @@ import { NewsComponent } from './news/news.component';
   providers: [
     {provide: ErrorHandler,
     useClass: ApplicationInsightsErrorHandler},
+    { provide: LocationStrategy, useClass: PathLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

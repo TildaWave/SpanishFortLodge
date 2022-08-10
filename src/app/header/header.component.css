@@ -4,6 +4,9 @@
   height: 455px;
 }
 
+h3 p{
+  font-weight: bold;
+}
 .navHeader {
     background: #d4af37;
     padding-left: 30px;
@@ -29,6 +32,7 @@
   color: #ffff;
   font-style: bold;
 }
+
 .main-title {
   font-weight: 300;
     font-family: 'ProximaNova-Semibold', sans-serif;
