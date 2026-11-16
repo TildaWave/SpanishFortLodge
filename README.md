@@ -34,8 +34,11 @@ addresses (`/about`, `/events`, `/newsfeed`) to the new pages.
 
 ## Deploying
 
-Pushing to `main` runs `.github/workflows/main_spanishfortlodge.yml`, which runs `npm run build` and deploys
-`dist/spanish-fort-lodge` to the `spanishfortlodge` Azure Web App.
+The site is hosted on GitHub Pages: https://tildawave.github.io/SpanishFortLodge/
+
+Pushing to `main` runs `.github/workflows/pages.yml`, which runs `npm run build` and publishes
+`dist/spanish-fort-lodge`. You can also run it by hand from the repo's Actions tab (Run workflow).
+In Settings > Pages, Source must be set to "GitHub Actions".
 
 ## Bootstrap
 
