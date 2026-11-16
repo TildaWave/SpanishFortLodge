@@ -1,4 +1,4 @@
-// Serves the production build (dist/spanish-fort-lodge) at http://localhost:4300 so it can be checked before deploying.
+// Serves the built site (the repo root, as GitHub Pages does) at http://localhost:4300 so it can be checked before pushing.
 // (The pages also open fine straight from disk; this is for checking the built copy as it will be served.)
 // Folders serve their index.html (the old /about, /events and /newsfeed addresses redirect to the new pages).
 // Usage: npm run build, then npm run preview. No extra packages needed.
@@ -8,7 +8,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist', 'spanish-fort-lodge');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = Number(process.env.PORT) || 4300;
 const TYPES = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',

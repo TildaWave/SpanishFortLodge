@@ -1,10 +1,13 @@
-// Builds the production copy of the site from src/ into dist/spanish-fort-lodge (the folder the GitHub workflow deploys).
+// Builds the published site from src/ into the repo root, which GitHub Pages serves as-is (main branch, root folder).
+// Edit the files in src/, then run this and commit both src/ and the generated files at the root.
 //   HTML: minified (whitespace, comments, inline CSS/JS); CSS/JS links get a ?v=<hash> stamp so browsers pick up changes
 //   CSS:  css/styles.css minified with clean-css (the Bootstrap files in css/vendor are already minified and copied as-is)
 //   JS:   minified with terser, then obfuscated with javascript-obfuscator
 //   Images, fonts and the favicon are copied as-is.
-// It also writes small redirect pages for the old Angular addresses (/about, /events, /newsfeed) so old links still work.
-// Usage: npm run build   (works on Node 16+, the version the deploy workflow uses)
+// It also writes small redirect pages for the old Angular addresses (/about, /events, /newsfeed) so old links still work,
+// and an empty .nojekyll file so GitHub Pages serves the files exactly as built.
+// Only the generated files (OUTPUTS below) are replaced; README, package.json, src/ and scripts/ are never touched.
+// Usage: npm run build
 
 import { promises as fs } from 'fs';
 import { createHash } from 'crypto';
@@ -17,7 +20,7 @@ import JavaScriptObfuscator from 'javascript-obfuscator';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'src');
-const DIST = path.join(ROOT, 'dist', 'spanish-fort-lodge');
+const DIST = ROOT; // GitHub Pages serves the repo root
 
 const HTML_FILES = ['index.html', 'about.html', 'events.html', 'news.html'];
 const CSS_FILES = ['css/styles.css'];
@@ -37,9 +40,12 @@ async function write(rel, content, originalSize) {
   if (originalSize !== undefined) report.push([rel, originalSize, Buffer.byteLength(content)]);
 }
 
+// Everything the build generates at the root. Cleared before each build so removed pages or images don't linger.
+const OUTPUTS = [...HTML_FILES, 'css', 'js', 'assets', 'favicon.ico', ...Object.keys(REDIRECTS), '.nojekyll'];
+
 async function build() {
-  await fs.rm(DIST, { recursive: true, force: true });
-  await fs.mkdir(DIST, { recursive: true });
+  for (const rel of OUTPUTS) await fs.rm(path.join(DIST, rel), { recursive: true, force: true });
+  await fs.writeFile(path.join(DIST, '.nojekyll'), '');
   const versions = {};
 
   for (const rel of CSS_FILES) {
@@ -57,6 +63,7 @@ async function build() {
       compact: true,
       controlFlowFlattening: false, // keeps the site fast on older phones
       identifierNamesGenerator: 'hexadecimal',
+      seed: 916, // same input -> same output, so the committed dist/ only changes when the site does
       renameGlobals: false,
       selfDefending: false,
       stringArray: true,
@@ -99,7 +106,7 @@ async function build() {
   }
 
   let before = 0, after = 0;
-  console.log('\nBuilt dist/spanish-fort-lodge:');
+  console.log('\nBuilt the site into the repo root:');
   for (const [rel, a, b] of report) {
     before += a; after += b;
     console.log(`  ${rel.padEnd(18)}${kb(a)} ->${kb(b)}`);
