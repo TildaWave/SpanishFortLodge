@@ -1,0 +1,11 @@
+# GitHub Pages settings. The website is the built files at the repo root (made by npm run build).
+# Everything listed below stays in the repo but is left off the published site.
+exclude:
+  - src/
+  - scripts/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - README.md
+  - .editorconfig
+  - .gitignore

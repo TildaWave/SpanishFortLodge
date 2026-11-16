@@ -4,9 +4,8 @@
 //   CSS:  css/styles.css minified with clean-css (the Bootstrap files in css/vendor are already minified and copied as-is)
 //   JS:   minified with terser, then obfuscated with javascript-obfuscator
 //   Images, fonts and the favicon are copied as-is.
-// It also writes small redirect pages for the old Angular addresses (/about, /events, /newsfeed) so old links still work,
-// and an empty .nojekyll file so GitHub Pages serves the files exactly as built.
 // Only the generated files (OUTPUTS below) are replaced; README, package.json, src/ and scripts/ are never touched.
+// _config.yml (committed, not generated) keeps src/, scripts/ and the npm files off the published website.
 // Usage: npm run build
 
 import { promises as fs } from 'fs';
@@ -26,8 +25,6 @@ const HTML_FILES = ['index.html', 'about.html', 'events.html', 'news.html'];
 const CSS_FILES = ['css/styles.css'];
 const JS_FILES = ['js/main.js'];
 const COPY = ['assets', 'css/vendor', 'favicon.ico'];
-// Old Angular routes -> new pages
-const REDIRECTS = { about: 'about.html', events: 'events.html', newsfeed: 'news.html' };
 
 const report = [];
 const kb = (n) => `${(n / 1024).toFixed(1)} KB`.padStart(10);
@@ -41,11 +38,10 @@ async function write(rel, content, originalSize) {
 }
 
 // Everything the build generates at the root. Cleared before each build so removed pages or images don't linger.
-const OUTPUTS = [...HTML_FILES, 'css', 'js', 'assets', 'favicon.ico', ...Object.keys(REDIRECTS), '.nojekyll'];
+const OUTPUTS = [...HTML_FILES, 'css', 'js', 'assets', 'favicon.ico'];
 
 async function build() {
   for (const rel of OUTPUTS) await fs.rm(path.join(DIST, rel), { recursive: true, force: true });
-  await fs.writeFile(path.join(DIST, '.nojekyll'), '');
   const versions = {};
 
   for (const rel of CSS_FILES) {
@@ -98,12 +94,6 @@ async function build() {
     await write(rel, out, Buffer.byteLength(src));
   }
 
-  for (const [route, page] of Object.entries(REDIRECTS)) {
-    await write(`${route}/index.html`,
-      `<!doctype html><meta charset="utf-8"><title>Moved</title><link rel="canonical" href="../${page}">` +
-      `<meta http-equiv="refresh" content="0; url=../${page}"><script>location.replace('../${page}'+location.hash)</script>` +
-      `<a href="../${page}">This page has moved.</a>`);
-  }
 
   let before = 0, after = 0;
   console.log('\nBuilt the site into the repo root:');
@@ -112,7 +102,7 @@ async function build() {
     console.log(`  ${rel.padEnd(18)}${kb(a)} ->${kb(b)}`);
   }
   console.log(`  ${'total'.padEnd(18)}${kb(before)} ->${kb(after)}`);
-  console.log(`  copied: ${COPY.join(', ')}; redirects: /${Object.keys(REDIRECTS).join(', /')}\n`);
+  console.log(`  copied: ${COPY.join(', ')}\n`);
 }
 
 build().catch((err) => {

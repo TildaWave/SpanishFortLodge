@@ -1,6 +1,5 @@
 // Serves the built site (the repo root, as GitHub Pages does) at http://localhost:4300 so it can be checked before pushing.
 // (The pages also open fine straight from disk; this is for checking the built copy as it will be served.)
-// Folders serve their index.html (the old /about, /events and /newsfeed addresses redirect to the new pages).
 // Usage: npm run build, then npm run preview. No extra packages needed.
 
 import http from 'http';
